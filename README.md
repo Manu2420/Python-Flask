@@ -53,3 +53,44 @@ Entonces, el comando anterior quedaría así:
 python -m venv .venv
 ```
 
+Una vez ejecutado el comando, tenemos que activar el entorno virtual, para ello escribimos lo siguiente:
+
+```cmd
+.venv\Scripts\activate
+```
+
+Una vez ejecutado veremos que nuestra terminal coloca al principio y entre parentesis **(.venv)**.
+
+Para ver los paquetes que se instalaron, utilizamos el siguiente comando:
+
+```cmd
+pip list
+```
+
+`pip list` mostrara un listado con los paquetes instalados al crear el entorno virtual **venv**.
+
+### Archivo requirements.txt
+
+El archivo `requirements.txt` en **Python** sirve para gestionar las dependencias de un proyecto, listando todas las
+bibliotecas externas y sus versiones específicas necesarias para que el código funcione. Permite automatizar la
+instalación de estos paquetes, garantizando que el entorno de desarrollo sea reproducible y consistente entre
+diferentes equipos o servidores.
+
+Para generar el archivo, podemos crearlo en la carpeta raíz de nuestro proyecto o utilizando el siguiente comando:
+
+```cmd
+pip freeze > requirements.txt
+```
+
+Este comando creara el archivo `requirements.txt`.
+
+Este archivo nos facilita la instalación de todas las dependencias que estamos utilizando en nuestro proyecto y nos permite llevar un control ordenado de los paquetes necesarios.
+
+Para ingresar las dependencias a nuestro archivo, tenemos dos opciones:
+
+- Escribiendo manualmente el nombre de la dependencia en el archivo, por ejemplo "flask".
+- La otra opción es, si ya instalamos las dependencias y no recordamos cuales son, ejecutamos el siguiente comando, el cual se encargara de escribirlos en el archivo por nosotros:
+  
+```cmd
+pip install -r requirements.txt    
+```
