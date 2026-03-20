@@ -38,8 +38,7 @@ El entorno virtual nos servira para gestionar las dependencias de nuestro proyec
 Los entornos virtuales son grupos independientes de bibliotecas Python, uno para cada proyecto. Los paquetes instalados
 para un proyecto no afectarán a otros proyectos o a los paquetes del sistema operativo.
 
-Para crear el entorno virtual, utilizaremos los siguientes comandos en nuestra terminal o utilizando la terminal de 
-**VS Code**.
+Para crear el entorno virtual, utilizaremos los siguientes comandos en nuestra terminal o utilizando la terminal de **VS Code**.
 
 ```cmd
 python -m venv nombre_entorno
@@ -68,6 +67,8 @@ pip list
 ```
 
 `pip list` mostrara un listado con los paquetes instalados al crear el entorno virtual **venv**.
+
+Para desactivar el entorno virtual, basta con escribir en la terminal `deactivate`, esto detendra el entorno por completo.
 
 ### Archivo requirements.txt
 
