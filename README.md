@@ -20,7 +20,7 @@ flask cuenta con una gran comunidad y documentación en línea, es fácil encont
 - Bajo nivel de abstracción
 - Fácil de intergrar con otros servicios
 
-## Instalación
+## Instalación Entorno Virtual
 
 Para intalar flask tenemos 2 opciones:
 
@@ -29,7 +29,7 @@ Para intalar flask tenemos 2 opciones:
 
 Para trabajar con flask, necesitamos crear y/o instalar un entorno virtual.
 
-El entorno virtual nos servira para gestionar las dependencias de nuestro proyecto. 
+El entorno virtual nos servira para gestionar las dependencias de nuestro proyecto.
 
 > ¿Qué problema resuelve un entorno virtual? Cuantos más proyectos de Python tengas, más probable es que necesites
 > trabajar con diferentes versiones de librerías de Python, o incluso con el propio Python. Las nuevas versiones de las
@@ -46,7 +46,8 @@ Para crear el entorno virtual, utilizaremos los siguientes comandos en nuestra t
 python -m venv nombre_entorno
 ```
 
-Python viene con el módulo **_venv_** para crear entornos virtuales. [Python](https://docs.python.org/es/3.14/library/venv.html#creating-virtual-environments)
+Python viene con el módulo **_venv_** para crear entornos virtuales. [Python](https://docs.python.org/es/3.14/library/venv.html#creating-virtual-environments),
+también puedes visitar la página de [Flask](https://flask.palletsprojects.com/en/stable/installation/#virtual-environments) que también tiene una guía d instalación del entorno virtual.
 
 Entonces, el comando anterior quedaría así:
 
@@ -97,3 +98,32 @@ Para ingresar las dependencias a nuestro archivo, tenemos dos opciones:
 ```cmd
 pip install -r requirements.txt    
 ```
+
+## Intalación de flask
+
+Una vez creado el entorno virtual y requirements.txt, el siguiente paso es instalar el micro-framework flask en nuestro proyecto.
+
+Para instalar flask desde la terminal, debemos utilizar el siguiente comando:
+
+```cmd
+pip install flask
+```
+
+Este comando instalara flask junto a otros paquetes que vienen con flask, como por ejemplo:
+
+```code
+Package      Version
+------------ -------
+blinker      1.9.0
+click        8.3.1
+colorama     0.4.6
+Flask        3.1.3
+itsdangerous 2.2.0
+Jinja2       3.1.6
+MarkupSafe   3.0.3
+pip          25.1.1
+Werkzeug     3.1.6
+```
+
+También podemos instalar otros paquetes como `bcrypt`, `PyMySQL`, `flask-mysqldb`, etc....
+
