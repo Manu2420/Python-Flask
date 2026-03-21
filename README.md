@@ -127,3 +127,5 @@ Werkzeug     3.1.6
 
 También podemos instalar otros paquetes como `bcrypt`, `PyMySQL`, `flask-mysqldb`, etc....
 
+>[!IMPORTANT]
+>Cada vez que tengamos que instalar un paquete, debemos detener el entorno virtual con `deactivate`, una vez instalado el paquete podemos volver a activar el entorno virtual.
