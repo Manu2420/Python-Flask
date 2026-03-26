@@ -1,6 +1,6 @@
-# Ptython - flask
+# Python - flask
 
-![Logo Flask](./img/flask.svg)
+![Logo Flask](./img/flask-logo-icon.svg)
 
 Flask es un micro-framework web ligero y flexible para Python, diseñado para crear aplicaciones web, APIs y
 microservicios de forma rápida y sencilla. Se basa en las herramientas **Werkzeug (WSGI)** y **Jinja (plantillas)**,
