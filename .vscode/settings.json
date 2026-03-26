@@ -2,11 +2,15 @@
     "cSpell.words": [
         "diseñado",
         "Fácil",
+        "Importamos",
+        "instancia",
+        "libreria",
         "ligero",
         "microservicios",
         "proporcionando",
         "utilizar",
         "Ventajas"
     ],
-    "cSpell.enabled": true
+    "cSpell.enabled": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }
