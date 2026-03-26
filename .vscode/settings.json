@@ -1,5 +1,6 @@
 {
     "cSpell.words": [
+        "aplicación",
         "diseñado",
         "Fácil",
         "Importamos",
@@ -7,10 +8,15 @@
         "libreria",
         "ligero",
         "microservicios",
+        "nuestra",
         "proporcionando",
+        "representa",
         "utilizar",
-        "Ventajas"
+        "Ventajas",
+        "Werkzeug",
+        "WSGI"
     ],
     "cSpell.enabled": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "cSpell.language": "en,es-ES"
 }

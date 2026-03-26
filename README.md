@@ -16,7 +16,7 @@ flask cuenta con una gran comunidad y documentación en línea, es fácil encont
 - Pequeño y ligero
 - Comunidad activa
 - Bajo nivel de abstracción
-- Fácil de intergrar con otros servicios
+- Fácil de integrar con otros servicios
 
 ## Instalación Entorno Virtual
 
@@ -97,7 +97,7 @@ Para ingresar las dependencias a nuestro archivo, tenemos dos opciones:
 pip install -r requirements.txt    
 ```
 
-## Intalación de flask
+## Instalación de flask
 
 Una vez creado el entorno virtual y requirements.txt, el siguiente paso es instalar el micro-framework flask en nuestro proyecto.
 
