@@ -91,15 +91,23 @@ Este archivo nos facilita la instalación de todas las dependencias que estamos 
 Para ingresar las dependencias a nuestro archivo, tenemos dos opciones:
 
 - Escribiendo manualmente el nombre de la dependencia en el archivo, por ejemplo "flask".
-- La otra opción es, si ya instalamos las dependencias y no recordamos cuales son, ejecutamos el siguiente comando, el cual se encargara de escribirlos en el archivo por nosotros:
+- La otra opción es, si ya instalamos las dependencias y no recordamos cuales son, volvemos a ejecutar el siguiente comando, el cual se encargara de escribirlos en el archivo por nosotros:
   
 ```cmd
-pip install -r requirements.txt    
+pip freeze > requirements.txt    
 ```
+
+Una vez que tengamos nuestro entorno virtual ejecutado, debemos cargar las dependencias, para ello utilizamos el siguiente comando:
+
+```cmd
+pip install -r requirements.txt
+```
+
+Este comando instalara las dependencias que estemos utilizando y que tengamos guardadas en nuestro archivo `.txt`.
 
 ## Instalación de flask
 
-Una vez creado el entorno virtual y requirements.txt, el siguiente paso es instalar el micro-framework flask en nuestro proyecto.
+Una vez creado el entorno virtual y requirements.txt, el siguiente paso es instalar el `micro-framework flask` en nuestro proyecto.
 
 Para instalar flask desde la terminal, debemos utilizar el siguiente comando:
 
