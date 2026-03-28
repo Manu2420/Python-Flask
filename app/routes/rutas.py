@@ -1,12 +1,18 @@
-# Importamos Blueprint
-from flask import Blueprint
+# Importamos Blueprint, render_template
+from flask import Blueprint, render_template
 
 rutas_bp = Blueprint('rutas', __name__)
 
 # Creamos una ruta, con el '/' le indicamos que esta será nuestra ruta principal
+#@rutas_bp.route('/')
+#def princ():
+#    return "hola Manuel"
+
+# Si tenemos una plantilla podemos agregarla aquí utilizando render_template
 @rutas_bp.route('/')
 def princ():
-    return "hola Manuel"
+    return render_template('index.html')
+
 
 # ruta a la página index
 @rutas_bp.route('/index')
