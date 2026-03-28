@@ -135,3 +135,86 @@ También podemos instalar otros paquetes como `bcrypt`, `PyMySQL`, `flask-mysqld
 
 >[!IMPORTANT]
 >Cada vez que tengamos que instalar un paquete, debemos detener el entorno virtual con `deactivate`, una vez instalado el paquete podemos volver a activar el entorno virtual.
+
+## iniciar el servidor de desarrollo
+
+Para iniciar el servidor de desarrollo de Flask tienes dos formas típicas: con flask run (recomendada) o con app.run() dentro del código.
+
+Opción 1: con flask run (CLI)
+Esta es la forma estándar en Flask moderno:
+
+En la terminal, ve a la carpeta de tu proyecto.
+
+Asegúrate de que tu entorno virtual esté activado y Flask instalado.
+
+Indica a Flask dónde está tu app (por ejemplo, app.py o run.py):
+
+- Si usas app.py:
+
+```bash
+flask --app app run
+```
+
+- Si usas run.py:
+
+```bash
+flask --app run run
+```
+
+Te mostrará algo como:
+
+```text
+Running on http://127.0.0.1:5000
+```
+
+Opción 2: activar el modo `debug`.
+
+Activar el modo Debug en Flask es fundamental porque nos permite dos cosas increíbles:
+
+- Auto-Reload: El servidor se reinicia solo cada vez que guardamos un cambio en el código.
+
+- Debugger Interactivo: Si hay un error, veremos una página en el navegador la cual nos permite ejecutar código para inspeccionar qué falló.
+
+Para activar el Debug, la forma más rápida y recomendable es la siguiente:
+
+Al final del código colocamos lo siguiente:
+
+```py
+if "__name__ == __main__":
+    app.run(debug=true)
+```
+
+¿Qué hace esto?
+
+Ese bloque de código es una de las "piezas mágicas" más comunes en Python y sirve para controlar cómo se ejecuta tu archivo.
+
+```py
+if __name__ == "__main__": Es el interruptor de seguridad.
+```
+
+Cuando ejecutas el archivo directamente: Python le asigna el nombre `"__main__"` a la variable interna `__name__`.
+
+Por lo tanto, la condición se cumple y el código de adentro se ejecuta.
+
+Cuando importas el archivo desde otro lado: Si en otro archivo escribieras import app, Python no ejecutaría el servidor de Flask.
+
+Esto es vital para evitar que se abra una ventana o un servidor sin que tú lo quieras solo por querer usar una función de ese archivo en otro proyecto.
+
+`app.run(debug=True)`: Hace funcionar el servidor de flask, y el parámetro `debug=true` le da "superpoderes" mientras programamos.
+
+Servidor Interactivo: Si cometes un error en el código, en lugar de que la página se quede en blanco o dé un error genérico, Flask te mostrará en el navegador exactamente en qué línea falló y te permitirá probar comandos ahí mismo para entender el error.
+
+Auto-recarga (Hot Reload): No tienes que detener y volver a ejecutar el servidor cada vez que guardas un cambio.
+
+Flask detecta que guardaste el archivo y reinicia el servidor en menos de un segundo. Es extremadamente útil para trabajar rápido en Warp y ver los resultados al instante.
+
+Acceso Local: Por defecto, esto abre el servidor en `http://127.0.0.1:5000`.
+
+Si por algún motivo estamos trabajando con el puerto 5000 con otro proyecto, podemos cambiar el puerto de flask de la siguiente forma:
+
+```py
+if "__name__ == __main__":
+    app.run(debug=True, port=5001)
+```
+
+Esto nos mostrara el servidor en `http://127.0.0.1:5001`.
