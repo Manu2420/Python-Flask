@@ -136,7 +136,7 @@ También podemos instalar otros paquetes como `bcrypt`, `PyMySQL`, `flask-mysqld
 >[!IMPORTANT]
 >Cada vez que tengamos que instalar un paquete, debemos detener el entorno virtual con `deactivate`, una vez instalado el paquete podemos volver a activar el entorno virtual.
 
-## iniciar el servidor de desarrollo
+## Iniciar el servidor de desarrollo
 
 Para iniciar el servidor de desarrollo de Flask tienes dos formas típicas: con flask run (recomendada) o con app.run() dentro del código.
 
