@@ -1,34 +1,67 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ data.titulo }}</title>
 </head>
-<body>
+<body> -->
     <!-- Pasamos el diccionario al h1 -->
-    <h1>{{ data.bienvenida }}</h1>
+    <!-- <h1>{{ data.bienvenida }}</h1> -->
     
-    <p>Cursos</p>
+    <!-- <p>Cursos</p> -->
     
     <!-- Iniciamos la condicional if -->
-    {% if data.num_cursos > 0 %}
+    <!-- {% if data.num_cursos > 0 %} -->
 
-    <ul>
+    <!-- <ul> -->
         <!-- Iniciamos el bucle for -->
-        {% for c in data.cursos %}
+        <!-- {% for c in data.cursos %} -->
 
-        <li>{{ c }}</li>
+        <!-- <li>{{ c }}</li> -->
 
         <!-- Terminamos el bucle for -->
-        {% endfor %}
-    </ul>
+        <!-- {% endfor %} -->
+    <!-- </ul> -->
 
     <!-- Utilizamos la condicional else -->
-    {% else%}
+    <!-- {% else%} -->
 
-    <p>No hay cursos disponibles...</p>
+    <!-- <p>No hay cursos disponibles...</p> -->
     <!-- Terminamos la condicional if -->
-    {% endif %}
-</body>
-</html>
+    <!-- {% endif %} -->
+<!-- </body> -->
+<!-- </html> -->
+
+<!-- ********************************************** -->
+<!-- vamos a extender este html de base.html -->
+
+{% extends "base.html" %}
+
+{% block title %} Index {% endblock %}
+
+<!-- aquí podemos volver a utilizar los bloques if y for -->
+
+{% block content %}
+
+<!-- Pasamos el diccionario al h1 -->
+<h1>{{ data.bienvenida }}</h1>
+
+<p>Cursos</p>
+
+<!-- Iniciamos la condicional if -->
+{% if data.num_cursos > 0 %}
+<ul>
+    <!-- Iniciamos el bucle for -->
+    {% for c in data.cursos %}
+    <li>{{ c }}</li>
+    <!-- Terminamos el bucle for -->
+    {% endfor %}
+</ul>
+<!-- Utilizamos la condicional else -->
+{% else%}
+<p>No hay cursos disponibles...</p>
+<!-- Terminamos la condicional if -->
+{% endif %}
+
+{% endblock %}
