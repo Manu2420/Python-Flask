@@ -3,11 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plantillas en Flask</title>
+    <title>{{ data.titulo }}</title>
 </head>
 <body>
-
-    <h1>Bienvenido a las Plantillas</h1>
+    <!-- Pasamos el diccionario al h1 -->
+    <h1>{{ data.bienvenida }}</h1>
     
+    <p>Cursos</p>
+    
+    <!-- Iniciamos la condicional if -->
+    {% if data.num_cursos > 0 %}
+
+    <ul>
+        <!-- Iniciamos el bucle for -->
+        {% for c in data.cursos %}
+
+        <li>{{ c }}</li>
+
+        <!-- Terminamos el bucle for -->
+        {% endfor %}
+    </ul>
+
+    <!-- Utilizamos la condicional else -->
+    {% else%}
+
+    <p>No hay cursos disponibles...</p>
+    <!-- Terminamos la condicional if -->
+    {% endif %}
 </body>
 </html>

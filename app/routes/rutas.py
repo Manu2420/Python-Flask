@@ -10,8 +10,18 @@ rutas_bp = Blueprint('rutas', __name__)
 
 # Si tenemos una plantilla podemos agregarla aquí utilizando render_template
 @rutas_bp.route('/')
-def princ():
-    return render_template('index.html')
+def inicio():
+    # Lista
+    cursos = ['PHP', 'Python', 'Java', 'JavaScript', 'MySQL', 'Kotlin']
+    # vamos a utilizar un diccionario
+    dato = {
+        'titulo': 'Index',
+        'bienvenida': '¡Saludos!',
+        # agregamos la lista al diccionario
+        'cursos': cursos,
+        'num_cursos': len(cursos)
+    }
+    return render_template('index.html', data=dato)
 
 
 # ruta a la página index
