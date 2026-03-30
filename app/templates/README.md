@@ -53,7 +53,7 @@ Un archivo `templates/index.html` puede contener:
 
 - `HTML` con enlaces a tus rutas y archivos estáticos (`css`, `js`).
 
-Ahora veamos un ejemplo de como utilizar estructuras de control en `HTML`.
+Ahora veamos un ejemplo de cómo utilizar estructuras de control en `HTML`.
 
 ```py
 @rutas_bp.route('/')
@@ -90,7 +90,7 @@ Salida:
 {'titulo': 'Index', 'bienvenida': '¡Saludos!'}
 ```
 
-Ahora veamos como utilizar el diccionario en el `HTML`:
+Ahora veamos cómo utilizar el diccionario en el `HTML`:
 
 ```html
 <body>
@@ -106,7 +106,7 @@ Salida:
 ¡Saludos!
 ```
 
-Ahora vamos a cambiar el titulo de la página:
+Ahora vamos a cambiar el título de la página:
 
 ```html
 <!DOCTYPE html>
@@ -170,7 +170,7 @@ Salida:
 
 ![Salida](../../img/salida1.png)
 
-Vamos a utilizar la condicional `if` para verificar que la lista sea mayor que 0, osea, que tenga contenido, si no tiene contenido mostraremos un párrafo que diga "No hay cursos disponibles...":
+Vamos a utilizar la condicional `if` para verificar que la lista sea mayor que 0, ósea, que tenga contenido, si no tiene contenido mostraremos un párrafo que diga "No hay cursos disponibles...":
 
 ```html
 <body>
@@ -311,3 +311,60 @@ Como podemos observar, `index.html` no contiene la estructura base para crear un
 - Usa nombres de bloques descriptivos (content, sidebar, scripts).
 - Evita sobrecargar la base con lógica; mantenla como esqueleto.
 - Documenta qué bloques deben sobrescribirse para que otros desarrolladores lo entiendan.
+
+## Variables
+
+En Jinja2, las variables son los datos que pasas desde tu aplicación Flask hacia las plantillas, y se representan dentro de `{{...}}`. Son la base para mostrar información dinámica en tu HTML.
+
+### Cómo funcionan las Variables
+
+En Flask defines valores y los envías al template con `render_template`. Esto ya lo vimos anteriormente:
+
+```py
+@rutas_bp.route('/')
+def inicio():
+    # Variable que es una Lista
+    cursos = ['PHP', 'Python', 'Java', 'JavaScript', 'MySQL', 'Kotlin']
+    # Variable que es un diccionario
+    dato = {
+        'titulo': 'Index',
+        'bienvenida': '¡Saludos!'
+        # agregamos la lista al diccionario
+        'cursos': cursos,
+        'num_cursos': len(cursos)
+    }
+    return render_template('index.html', data=dato)
+```
+
+Explicación: en la imagen hay dos variables (`cursos` y `dato`):
+
+- La variable `cursos` es una `lista`.
+- La variable `dato` es un `diccionario`.
+
+En la imagen se observa que solo una variable es enviada a través del `render_template`.
+
+La variable `dato` es se pasa al template y se le asigna el nombre de `data` y con ese nombre será utilizada en el archivo `.html` como se muestra en la siguiente imagen:
+
+```html
+<body>
+    <!-- Pasamos la variable data al h1 -->
+    <h1>{{ data.bienvenida }}</h1>
+    
+    <p>Cursos</p>
+    <ul>
+        <!-- Iniciamos el bucle for -->
+        {% for c in data.cursos %}
+        <li>{{ c }}</li>
+        <!-- Terminamos el bucle for -->
+        {% endfor %}
+    </ul>
+</body>
+```
+
+## Filtros y Funciones
+
+En Jinja2, los filtros son funciones que transforman valores directamente en las plantillas, mientras que las funciones (macros y llamadas a funciones Python) permiten reutilizar lógica y generar contenido dinámico. Los filtros se aplican con el operador `|`, y las macros funcionan como funciones definidas dentro de las plantillas.
+
+### Filtros
+
+Los filtros son como “funciones rápidas” que se aplican a variables en el template.
