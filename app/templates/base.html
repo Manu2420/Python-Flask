@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página base - {% block title %}{% endblock %}</title>
+</head>
+<body>
+
+    <h1>Página base de mi proyecto</h1>
+
+    <p>A continuación se mostrará el contenido de la página Index, la cual extiende de esta página.</p>
+
+    {% block content %}
+    <!-- aquí irá el contenido de la página hija -->
+    {% endblock %}
+    
+</body>
+</html>
