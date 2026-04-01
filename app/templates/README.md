@@ -1,5 +1,7 @@
 # Plantillas
 
+![Jinja2](../../img/jinja2.svg)
+
 Las plantillas `Jinja2` + `HTML` son el “motor de vistas” de `Flask`: permiten escribir páginas `HTML` que se vuelven dinámicas, usando `variables`, `bucles`, `condicionales`, `herencia` y más, todo desde el mismo archivo `.html`.
 
 ## ¿Dónde se crean las plantillas?
