@@ -367,4 +367,34 @@ En Jinja2, los filtros son funciones que transforman valores directamente en las
 
 ### Filtros
 
-Los filtros son como “funciones rápidas” que se aplican a variables en el template.
+Los filtros son como “funciones rápidas” que se aplican para modificar las variables en el template.
+
+Los filtros más comunes, los podemos encontrar en [filtros Jinja2](https://jinja.palletsprojects.com/en/stable/templates/#builtin-filters) y aquí, los más utilizados:
+
+| Filtro | Descripción | Ejemplo de Uso | Resultado |
+| --- | --- | --- | --- |
+| capitalize | Primera letra en mayúscula. | {{ "hola mundo" \| capitalize }} | Hola mundo |
+| default | Valor si la variable no existe. | {{ user \| default('Invitado') }} | Invitado |
+| escape | Convierte HTML en texto plano. | {{ "\<a\>" \| escape }} | &lt;a&gt; |
+| first | Primer ítem de una lista. | {{ [1, 2, 3] \| first }} | 1 |
+| format | Formato tipo printf. | {{ "%s tiene %d años" \| format("Jeniffer", 25) }} | Jeniffer tiene 25 años |
+| join | Une una lista en un string. | {{ ['Py', 'JS', 'PHP'] \| join('-') }} | Py-JS-PHP |
+| last | Último ítem de una lista. | {{ [1, 2, 3] \| last }} | 3 |
+| length | Cuenta elementos o letras. | {{ "Flask" \| length }} | 5 |
+| lower | Todo a minúsculas. | {{ "PYTHON" \| lower }} | python |
+| replace | Cambia un texto por otro. | {{ "Hola Pepe" \| replace("Pepe", "Luis") }} | Hola Luis |
+| round | Redondea decimales. | {{ 3.1415 \| round(2) }} | 3.14 |
+| safe | Renderiza HTML real. | {{ "\<b>Hey\</b>" \| safe }} | Hey (en negrita) |
+| sort | Ordena alfabética o numéricamente. | {{ [3, 1, 2] \| sort }} | [1, 2, 3] |
+| striptags | Borra etiquetas HTML. | {{ "\<b>Admin\</b>" \| striptags }} | Admin |
+| title | Formato de Título. | {{ "mi proyecto" \| title }} | Mi Proyecto |
+| truncate | Corta un texto largo. | {{ "Texto muy largo" \| truncate(10) }} | Texto muy... |
+| upper | Todo a mayúsculas. | {{ "alerta" \| upper }} | ALERTA |
+| wordcount | Cuenta palabras. | {{ "Hola mundo real" \| wordcount }} | 3 |
+
+Los filtros podemos combinarlos entre si, para aplicar varios filtros a una sola variable a la vez.
+
+```py
+{{ titulo|striptags|title }}
+# Limpia etiquetas HTML y luego pone formato de título.
+```
